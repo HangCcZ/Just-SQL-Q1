@@ -11,7 +11,7 @@
 
 ## Top 3 average government debts in percent of the gdp_per_capita for those countries over the course of **4** years only.
 ```
-SELECT code, SUM(govt_debt) / SUM(gdp_per_capita) * 100 as average_percent_of_debt_to_gdp_per_year, strftime('%Y', DATE()) - YEAR
+SELECT code, SUM(govt_debt) / SUM(gdp_per_capita) * 100 as average_percent_of_debt_to_gdp_per_year
 FROM countries
 WHERE gdp_per_capita >= 40000 AND (strftime('%Y', DATE()) - YEAR <= 4)
 GROUP BY code
